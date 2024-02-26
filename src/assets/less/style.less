@@ -1,0 +1,56 @@
+@import "goodt-framework-css";
+@import "/src/assets/less/_helpers.less";
+
+/* Variables */
+@main-font-weight: 400;
+@main-font-weight-header: 500;
+@main-font-size: calc(var(--font-size));
+@icon-color: #acacb3;
+
+/*~~~~~~~~~~~~~~~~~~~~~*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input[type="text"],
+input[type="text"]:active,
+input[type="text"]:focus,
+select,
+select:active,
+select:focus {
+  border: none;
+  position: relative;
+  outline: none;
+  border-bottom: 0.2em solid var(--color-border);
+  padding: 0 0 var(--spacer3) 0;
+  margin-right: @spacer4;
+  width: 100%;
+
+  &::placeholder {
+    color: @icon-color;
+  }
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('/src/components/icons/menuShow.svg');
+  background-repeat: no-repeat;
+  background-position: right 0.5em top 0%, 0 0;
+  background-size: 1em auto, 100%;
+  border: none;
+  border-bottom: 0.2em solid var(--color-border);
+  color: @icon-color;
+}
+
+svg {
+  fill: @icon-color;
+  width: @form-control-icon-width;
+}

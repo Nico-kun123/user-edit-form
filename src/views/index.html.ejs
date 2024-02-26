@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <!-- IMPORTANT TAGS -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Форма редактирования пользователей</title>
+    <meta
+      name="description"
+      content="Тестовое задание: Форма редактирования пользователей с валидацией полей (Vue2/Vue3)."
+    />
+    <meta
+      name="keywords"
+      content="Vue.js, Vite.js, Form validation, Vuelidate, test task"
+    />
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+    <meta http-equiv="Content-Language" content="ru" />
+    <!-- <meta http-equiv="refresh" content="N; url=https://nico-kun123.github.io/Portfolio/" /> -->
+
+    <!-- For Facebook -->
+    <!-- <meta property="og:url" content="https://nico-kun123.github.io/Portfolio/"> -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="User Editing Form" />
+    <meta
+      property="og:description"
+      content="A Simple Form for User Data Editing."
+    />
+    <!--
+      You can generate this image URL dynamically: https://ogcdn.net/e4b8c678-7bd5-445d-ba03-bfaad510c686/v3/{site_text}/{title_text}/{image_url}/og.png
+      Replace the variables in the brackets with your own values and use this URL in the image tag below this comment. Ensure values are URL encoded.
+      For more information, read: https://www.opengraph.xyz/blog/how-to-implement-dynamic-open-graph-images
+    -->
+    <meta
+      property="og:image"
+      content="https://ogcdn.net/e4b8c678-7bd5-445d-ba03-bfaad510c686/v3/nico-kun123.github.io/My%20Portfolio/https%3A%2F%2Fopengraph.b-cdn.net%2Fproduction%2Fdocuments%2Ff1087638-f9dd-477d-b97a-7b7e86165924.jpg%3Ftoken%3DOYcR06O6a9WF47N0aeyC_eT90RuS_CPhPnmqhezxQUQ%26height%3D1063%26width%3D827%26expires%3D33240729402/og.png"
+    />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="nico-kun123.github.io" />
+    <!-- <meta property="twitter:url" content="https://nico-kun123.github.io/Portfolio/"> -->
+    <meta name="twitter:title" content="User Editing Form" />
+    <meta
+      name="twitter:description"
+      content="A Simple Form for User Data Editing."
+    />
+    <!--
+      You can generate this image URL dynamically: https://ogcdn.net/e4b8c678-7bd5-445d-ba03-bfaad510c686/v3/{site_text}/{title_text}/{image_url}/og.png
+      Replace the variables in the brackets with your own values and use this URL in the image tag below this comment. Ensure values are URL encoded.
+      For more information, read: https://www.opengraph.xyz/blog/how-to-implement-dynamic-open-graph-images
+    -->
+    <meta
+      name="twitter:image"
+      content="https://ogcdn.net/e4b8c678-7bd5-445d-ba03-bfaad510c686/v3/nico-kun123.github.io/My%20Portfolio/https%3A%2F%2Fopengraph.b-cdn.net%2Fproduction%2Fdocuments%2Ff1087638-f9dd-477d-b97a-7b7e86165924.jpg%3Ftoken%3DOYcR06O6a9WF47N0aeyC_eT90RuS_CPhPnmqhezxQUQ%26height%3D1063%26width%3D827%26expires%3D33240729402/og.png"
+    />
+
+    <% if (environment === 'production') { %>
+    <link
+      rel="stylesheet"
+      href="<%= manifest['src/assets/less/style.less'].file %>"
+    />
+    <% } %>
+  </head>
+  <body>
+    <div id="app"></div>
+    <% if (environment === 'production') { %>
+    <script type="module" src="<%= manifest['src/main.ts'].file %>"></script>
+    <% } else { %>
+    <script type="module" src="http://localhost:5173/@vite/client"></script>
+    <script type="module" src="http://localhost:5173/src/main.ts"></script>
+    <% } %>
+    <router-view></router-view>
+  </body>
+</html>

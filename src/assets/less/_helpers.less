@@ -1,0 +1,73 @@
+.border-round() {
+    border-radius: 999999px;
+}
+/**
+ * @param {int} @size   shadow size 1+
+ */
+.shadow(@size) {
+    @x: 0;
+    @y: calc(0.0625rem * @size);
+    @b: calc(0.25rem * @size);
+    @s: -0.125rem;
+    box-shadow+: @x @y @b @s rgba(0, 0, 0, 0.25);
+}
+/**
+ * @param {float} @val    opacity value 0-1
+ */
+.opacity(@val) {
+    @p: @val*100;
+    filter: alpha(opacity= @p);
+    opacity: @val;
+}
+/**
+ * @param {ColorObject} @color  focus color object (hex, rgb, rgba, hsl) @default @color-focus 
+ */
+.focus-state(@color: @color-focus) {
+    outline-color: @color;
+}
+/**
+ * @param {unit} @width  outline width @default @focus-outline-width
+ */
+.has-focus-state(@width: @focus-outline-width) {
+    outline: @width solid transparent;
+    transition+: outline-color 0.2s ease-out;
+}
+/**
+ * @param {XML} @svg    svg xml
+ * @return data:image/svg
+ */
+.svg-image(@svg) {
+    @i: escape(@svg);
+    @return: 'data:image/svg+xml,@{i}';
+}
+/**
+ * @param {unit} @size    size unit-less
+ * @return rem value
+ */
+.rem(@size) {
+    @return: calc(@size / @font-size-base * 1rem);
+}
+/**
+ * @param {string} @name
+ * @return {string}
+ */
+.var(@name) {
+    @return: var(~'--@{prefix}@{name}');
+}
+/**
+ * @param {string} @viewport-size     screen size in measure units (px, em, rem etc)
+ * @param {string} @rules           css rules to be applied
+ */
+/*
+ @example
+.media(@viewport-m, {
+    .my-class {
+        color: #f00;
+    }
+});
+*/
+.media(@viewport-size, @rules) {
+    @media only screen and (max-width: @viewport-size) {
+        @rules();
+    }
+}
