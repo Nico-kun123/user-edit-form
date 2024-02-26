@@ -292,7 +292,7 @@ router.use("*", async (req, res, next) => {
 Клонируем удалённый репозиторий на локальную машину:
 
 ```markdown
-git clone https://github.com/Nico-kun123/Simple-Form-Validation--Vue-Vuelidate-
+git clone https://github.com/Nico-kun123/user-edit-form
 ```
 
 Устанавливаем все необходимые компоненты:
